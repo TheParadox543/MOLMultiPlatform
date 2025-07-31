@@ -1,4 +1,4 @@
-package compose.project.demo
+package com.paradox543.malankaraorthodoxliturgica
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

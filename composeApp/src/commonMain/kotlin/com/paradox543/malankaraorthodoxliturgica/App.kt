@@ -1,4 +1,4 @@
-package compose.project.demo
+package com.paradox543.malankaraorthodoxliturgica
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -16,8 +16,8 @@ import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-import composedemo.composeapp.generated.resources.Res
-import composedemo.composeapp.generated.resources.compose_multiplatform
+import malankaraorthodoxliturgica.composeapp.generated.resources.Res
+import malankaraorthodoxliturgica.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 @Preview

@@ -1,4 +1,4 @@
-rootProject.name = "ComposeDemo"
+rootProject.name = "MalankaraOrthodoxLiturgica"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

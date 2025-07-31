@@ -50,11 +50,11 @@ kotlin {
 }
 
 android {
-    namespace = "compose.project.demo"
+    namespace = "com.paradox543.malankaraorthodoxliturgica"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "compose.project.demo"
+        applicationId = "com.paradox543.malankaraorthodoxliturgica"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

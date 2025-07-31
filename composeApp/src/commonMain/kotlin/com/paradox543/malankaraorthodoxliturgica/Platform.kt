@@ -1,4 +1,4 @@
-package compose.project.demo
+package com.paradox543.malankaraorthodoxliturgica
 
 interface Platform {
     val name: String
