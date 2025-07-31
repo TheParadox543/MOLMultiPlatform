@@ -1,4 +1,4 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.gradle.kotlin.dsl.implementation
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -7,6 +7,11 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.0"
+    // Google services plugin
+    id("com.google.gms.google-services")
+    // Add the Crashlytics plugin
+    id("com.google.firebase.crashlytics")
 }
 
 kotlin {
@@ -32,6 +37,12 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            // Firebase Services
+            implementation(project.dependencies.platform(libs.firebase.bom))       // Firebase Bill of Materials for version consistency
+            implementation(libs.firebase.analytics)           // Firebase Analytics for app usage data
+            implementation(libs.firebase.crashlytics)         // Firebase Crashlytics for crash reporting
+            implementation(libs.firebase.crashlytics.ndk)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -42,6 +53,21 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            // Data Storage
+            implementation(libs.androidx.datastore.preferences) // Jetpack DataStore for preferences
+
+            // Data Serialization
+            implementation(libs.kotlinx.serialization.json) // Kotlinx Serialization library for JSON
+
+            // Dependency Injection
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+
+            // Voyager Navigation
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.transitions)
+            implementation(libs.voyager.koin) // Koin integration for ViewModels
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -51,12 +77,12 @@ kotlin {
 
 android {
     namespace = "com.paradox543.malankaraorthodoxliturgica"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.paradox543.malankaraorthodoxliturgica"
-        minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
+        minSdk = 24
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
     }
