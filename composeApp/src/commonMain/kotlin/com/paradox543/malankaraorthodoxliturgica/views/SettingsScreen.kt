@@ -54,9 +54,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 //import com.paradox543.malankaraorthodoxliturgica.BuildConfig
 //import com.paradox543.malankaraorthodoxliturgica.R
-import org.koin.compose.viewmodel.koinViewModel // For standard Jetpack Compose ViewModels
 import com.paradox543.malankaraorthodoxliturgica.data.model.AppLanguage
 import com.paradox543.malankaraorthodoxliturgica.data.model.AppTextStyle
+import com.paradox543.malankaraorthodoxliturgica.koinViewModel
 import com.paradox543.malankaraorthodoxliturgica.viewmodel.SettingsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
