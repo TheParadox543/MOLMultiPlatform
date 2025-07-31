@@ -16,6 +16,7 @@ koin-bom = "4.0.3"
 voyager = "1.1.0-beta03"
 
 [libraries]
+koin-android = { module = "io.insert-koin:koin-android" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }

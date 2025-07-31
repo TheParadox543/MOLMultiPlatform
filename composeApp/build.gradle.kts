@@ -38,6 +38,8 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
 
+            implementation(libs.koin.android)
+
             // Firebase Services
             implementation(project.dependencies.platform(libs.firebase.bom))       // Firebase Bill of Materials for version consistency
             implementation(libs.firebase.analytics)           // Firebase Analytics for app usage data
