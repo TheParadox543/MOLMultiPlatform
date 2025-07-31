@@ -1,17 +1,15 @@
 package com.paradox543.malankaraorthodoxliturgica.di
 
 import com.paradox543.malankaraorthodoxliturgica.data.repository.PrayerRepository
-import com.paradox543.malankaraorthodoxliturgica.data.AssetReader
+import com.paradox543.malankaraorthodoxliturgica.data.repository.SettingsRepository
+import com.paradox543.malankaraorthodoxliturgica.viewmodel.SettingsViewModel
 import kotlinx.serialization.json.Json
-import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
 
     // --- SINGLETONS ---
-    // Use single { ... } for objects that should have only one instance in the app.
-
-    // Provides the kotlinx.serialization Json instance as a singleton.
     single {
         Json {
             ignoreUnknownKeys = true // Important for robust parsing
@@ -22,4 +20,8 @@ val appModule = module {
 
     // --- REPOSITORIES ---
     single { PrayerRepository(get(), get()) }
+    single { SettingsRepository(get()) }
+
+    // View Models
+    viewModel { SettingsViewModel(get()) }
 }

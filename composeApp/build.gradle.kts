@@ -39,6 +39,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
 
             implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
 
             // Firebase Services
             implementation(project.dependencies.platform(libs.firebase.bom))       // Firebase Bill of Materials for version consistency
@@ -63,13 +64,15 @@ kotlin {
             implementation(libs.kotlinx.serialization.json) // Kotlinx Serialization library for JSON
 
             // Dependency Injection
-            implementation(project.dependencies.platform(libs.koin.bom))
-            implementation(libs.koin.core)
+//            implementation(project.dependencies.platform(libs.koin.bom))
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.lifecycle.viewmodel)
 
             // Voyager Navigation
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.transitions)
-            implementation(libs.voyager.koin) // Koin integration for ViewModels
+//            implementation(libs.voyager.koin) // Koin integration for ViewModels
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
